@@ -9,3 +9,5 @@ Add data. perform EDA and train on notebooks.
 Create data_ingestion.py 
 
 Create data_transformation.py
+
+Create model_trainer.py
