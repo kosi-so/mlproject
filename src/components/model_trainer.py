@@ -17,7 +17,7 @@ from xgboost import XGBRegressor
 from src.exception import CustomException
 from src.logger import logging
 
-from src.utils import save_object, evaluate_models
+from src.utils import save_object, evaluate_models, read_params
 
 @dataclass
 class ModelTrainerConfig:
@@ -45,9 +45,10 @@ class ModelTrainer:
                 "CatBoosting Regressor": CatBoostRegressor(verbose=False),
                 "AdaBoost Regressor": AdaBoostRegressor(),
             }
-
+            params_path = read_params("params.yaml")
+            params = params_path["models"]
             model_report:dict =evaluate_models(X_train=X_train, y_train=y_train, X_test=X_test, 
-                                              y_test=y_test, models=models)
+                                              y_test=y_test, models=models, param=params)
             
             # Get best model score from dict
             best_model_score = max(sorted(model_report.values()))
