@@ -17,3 +17,5 @@ Create app.py
 Create templates folder
 
 Create predict_pipeline.py
+
+Create .ebextensions folder, add python.config
