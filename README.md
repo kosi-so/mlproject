@@ -11,3 +11,9 @@ Create data_ingestion.py
 Create data_transformation.py
 
 Create model_trainer.py
+
+Create app.py
+
+Create templates folder
+
+Create predict_pipeline.py
